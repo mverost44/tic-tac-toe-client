@@ -14,6 +14,11 @@ const onSignInSuccess = (response) => {
   $('#user-message').text('Signed In!').css('color', 'green')
   store.user = response.user
   console.log(store.user)
+
+  $('#sign-up-button').hide()
+  $('#sign-in-button').hide()
+  $('#change-pw-button').show()
+  $('#sign-out').show()
 }
 
 const onSignInFailure = (response) => {
@@ -29,8 +34,13 @@ const onChangeFailure = () => {
 }
 
 const onSignOutSuccess = () => {
-  $('#user-message').text('Successfully Logged Out').css('color', 'green')
+  $('#user-message').text('Signed Out').css('color', 'green')
   store.user = null
+
+  $('#sign-up-button').show()
+  $('#sign-in-button').show()
+  $('#change-pw-button').hide()
+  $('#sign-out').hide()
 }
 
 module.exports = {

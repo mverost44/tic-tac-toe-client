@@ -8,6 +8,8 @@
 const events = require('./sign-up/events.js')
 
 $(() => {
+  $('#change-pw-button').hide()
+  $('#sign-out').hide()
   $('#user-sign-up').on('submit', events.onSignUp)
   $('#user-sign-in').on('submit', events.onSignIn)
   $('#user-change-password').on('submit', events.onChangePassword)

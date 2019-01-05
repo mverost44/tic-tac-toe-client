@@ -7,37 +7,41 @@ $grey: rgb(128, 128, 128);
 $teal: rgb(0, 156, 161);
 $black: #000;
 
-.game-board {
-  margin: 20vw, 0;
+.hide {
+  visibility: hidden;
 }
 
-body {
-  background-color: $background-color;
-}
+ .game-board {
+   margin: 20vw, 0;
+ }
 
-h1 {
-  text-align: center;
-}
+ body {
+   background-color: $background-color;
+ }
 
-.box {
-  align-items: center;
-  border: 1px solid $white;
-  color: $font-color;
-  display: flex;
-  height: 25.3vh;
-  justify-content: center;
-  width: 70%;
-}
+ h1 {
+   text-align: center;
+ }
 
-.grey {
-  background-color: $grey;
-}
+ .box {
+   align-items: center;
+   border: 1px solid $white;
+   color: $font-color;
+   display: flex;
+   height: 25.3vh;
+   justify-content: center;
+   width: 70%;
+ }
 
-.teal {
-  background-color: $teal;
-}
+ .grey {
+   background-color: $grey;
+ }
 
-.row {
-  align-items: center;
-  margin: auto;
-}
+ .teal {
+   background-color: $teal;
+ }
+
+ .row {
+   align-items: center;
+   margin: auto;
+ }

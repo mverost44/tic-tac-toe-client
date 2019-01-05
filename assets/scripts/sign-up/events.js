@@ -12,6 +12,8 @@ const onSignUp = (event) => {
   api.signUp(formData)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
+
+  $('#signUpModal').modal('hide')
 }
 
 const onSignIn = event => {
@@ -22,7 +24,7 @@ const onSignIn = event => {
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
 
-  $('form').trigger('reset')
+  $('#signInModal').modal('hide')
 }
 
 const onChangePassword = event => {
@@ -34,6 +36,7 @@ const onChangePassword = event => {
     .catch(ui.onChangeFailure)
 
   $('form').trigger('reset')
+  $('#changePasswordModal').modal('hide')
 }
 
 const onSignOut = event => {
