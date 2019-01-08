@@ -3,7 +3,7 @@
 ## READ ME
 
 
-## LIST OF TECHNOLOGIES USED
+## List of Technologies Used
 
 -javascript
 -HTML5
@@ -16,15 +16,15 @@
 -Ubuntu Bash
 -web pack (for grunt serve)
 
-## PLANNING && PROCESS
+## Planning && Process
 
 The first step I took towards tackling this project was creating a detailed step-by-step plan of action and becoming familiar with all user-stories.  Once I felt comfortable, I began to create a responsive game board and a working user-authentication application.  I found that by having something to look at and experiment with, I could more easily create functionality. Building game logic was a pretty straightforward process that involved a lot of trial and error.  The hardest part of this process was integrating my game logic with the game API.  It took a lot of google searches and phoning a friend to get everything up and running.  I've found that tackling a bug is easiest when you can document exactly what you did and why you did it leading up to the error (mostly using psuedo-code).  This way, you can quickly pin-point where you went wrong.
 
-## FUTURE ITERATIONS
+## Future Iterations
 
 For future iterations of this project, I want to clean up my code and make it as DRY and efficient as possible. I'd like to add comments in places that can be worked on and places that new features could be added.
 
-## LINKS TO WIREFRAME AND USER stories
+## Link to wireframe and user stories
 
 https://imgur.com/a/Wjj8p6n - WIREFRAME
 
