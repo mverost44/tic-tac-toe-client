@@ -11,32 +11,32 @@ $black: #000;
   visibility: hidden;
 }
 
- .game-board {
-   margin: 20vw, 0;
+.game-board {
+  margin: 20vw, 0;
  }
 
- body {
-   background-color: $background-color;
+body {
+  background-color: $background-color;
  }
 
- h1 {
-   text-align: center;
+h1 {
+  text-align: center;
  }
 
  #win-message {
-   text-align: center;
-   font-weight:600;
-   color: green;
+  color: green;
+  font-weight: 600;
+  text-align: center;
  }
 
  .box {
-   align-items: center;
-   border: 1px solid $white;
-   color: $font-color;
-   display: flex;
-   height: 25.3vh;
-   justify-content: center;
-   width: 70%;
+  align-items: center;
+  border: 1px solid $white;
+  color: $font-color;
+  display: flex;
+  height: 25.3vh;
+  justify-content: center;
+  width: 70%;
  }
 
  .grey {
@@ -55,3 +55,18 @@ $black: #000;
 .box:hover {
   background-color: $grey;
  }
+
+ #user-message,
+ #games-played {
+   text-align: center;
+ }
+
+// .border {
+//   border-top: 1px solid $white;
+//   border-bottom: 1px solid $white;
+//  }
+//
+// .border1 {
+//   border-left: 1px solid $white;
+//   border-right: 1px solid $white;
+// }

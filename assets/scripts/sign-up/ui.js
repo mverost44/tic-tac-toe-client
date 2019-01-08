@@ -15,7 +15,6 @@ const onSignInSuccess = (response) => {
   store.user = response.user
   console.log(store.user)
 
-  $('.game-board').show()
   $('#get-games').show()
   $('#create-game').show()
   $('#sign-up-button').hide()
@@ -37,7 +36,9 @@ const onChangeFailure = () => {
 }
 
 const onSignOutSuccess = () => {
-  $('#user-message').text('Signed Out').css('color', 'green')
+  $('#user-message').text('Signed out. Sign back in to play again!').css('color', 'green')
+  $('#games-played').text('')
+  $('#win-message').text('')
   store.user = null
 
   $('.game-board').hide()
