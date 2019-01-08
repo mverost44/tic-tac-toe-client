@@ -13,11 +13,13 @@ const onGetGamesFailure = (response) => {
 
 const onCreateGameSuccess = (response) => {
   store.game = response.game
-
   console.log(store.game)
+
+  $('.game-board').show()
   $('#user-message').text('')
   $(' ').replaceAll('p')
 
+  $('#games-played').text('')
   $('#win-message').text('')
 }
 const onCreateGameFailure = (response) => {
