@@ -12,12 +12,12 @@ const turnCount = function () {
     checkForWin()
   }
 }
-console.log(turn)
+// console.log(turn)
 
 const endGame = function () {
   store.game.over = true
   $('#user-message').text('')
-  console.log(store.game.over)
+  // console.log(store.game.over)
   turn = 0
   cells = ['', '', '', '', '', '', '', '', '']
 }
@@ -80,7 +80,7 @@ const onClick = function (id, cellNum) {
     $('#user-message').text('Player 1\'s turn')
     apiEvents.onUpdateGame(cellNum, 'O')
     cells.splice(cellNum, 1, 'O')
-    console.log(cells)
+    // console.log(cells)
     turnCount()
   }
 }

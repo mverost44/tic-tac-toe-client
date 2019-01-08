@@ -13,7 +13,7 @@ const onSignUpFailure = () => {
 const onSignInSuccess = (response) => {
   $('#user-message').text('Signed In!').css('color', 'green')
   store.user = response.user
-  console.log(store.user)
+  // console.log(store.user)
 
   $('#get-games').show()
   $('#create-game').show()

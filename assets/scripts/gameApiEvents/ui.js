@@ -8,12 +8,12 @@ const onGetGamesSuccess = (response) => {
 }
 
 const onGetGamesFailure = (response) => {
-  console.log(response)
+  // console.log(response)
 }
 
 const onCreateGameSuccess = (response) => {
   store.game = response.game
-  console.log(store.game)
+  // console.log(store.game)
 
   $('.game-board').show()
   $('#user-message').text('')
@@ -23,17 +23,17 @@ const onCreateGameSuccess = (response) => {
   $('#win-message').text('')
 }
 const onCreateGameFailure = (response) => {
-  console.log('response is' + response)
+  // console.log('response is' + response)
   $('#user-message').text('Error creating a game.')
 }
 
 const onUpdateGameSuccess = (response) => {
-  console.log(response)
-  console.log(response.game)
+  // console.log(response)
+  // console.log(response.game)
 }
 
 const onUpdateGameFailure = (response) => {
-  console.log(response)
+  // console.log(response)
 }
 
 module.exports = {
