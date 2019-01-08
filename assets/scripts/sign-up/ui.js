@@ -15,6 +15,9 @@ const onSignInSuccess = (response) => {
   store.user = response.user
   console.log(store.user)
 
+  $('.game-board').show()
+  $('#get-games').show()
+  $('#create-game').show()
   $('#sign-up-button').hide()
   $('#sign-in-button').hide()
   $('#change-pw-button').show()
@@ -37,10 +40,14 @@ const onSignOutSuccess = () => {
   $('#user-message').text('Signed Out').css('color', 'green')
   store.user = null
 
+  $('.game-board').hide()
+  $('#reset-board').hide()
   $('#sign-up-button').show()
   $('#sign-in-button').show()
   $('#change-pw-button').hide()
   $('#sign-out').hide()
+  $('#get-games').hide()
+  $('#create-game').hide()
 }
 
 module.exports = {
