@@ -29,8 +29,17 @@
       <button id="sign-out" type="submit" class="btn btn-primary">
         Sign Out
       </button>
+
+      <button id="create-game" type="submit" class="btn btn-primary">
+        Create New Game
+      </button>
+
+      <button id="get-games" type="submit" class="btn btn-primary">
+        Get All Games
+      </button>
 </nav>
     <h1>Tic Tac Toe+</h1>
+    <div id="win-message"></div>
 
     <!-- Sign Up Modal -->
     <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -145,28 +154,30 @@
 
 <div class="container">
 <div class="row">
-<div id="one" class="col-4 col-md-4 col-lg-4 box grey"> 1 </div>
-<div id="two" class="col-4 col-md-4 col-lg-4 box grey"> 2 </div>
-<div id="three" class="col-4 col-md-4 col-lg-4 box grey"> 3 </div>
+<div id="one" class="col-4 col-md-4 col-lg-4 box teal"></div>
+<div id="two" class="col-4 col-md-4 col-lg-4 box teal"></div>
+<div id="three" class="col-4 col-md-4 col-lg-4 box teal"></div>
 </div>
 </div>
 
 <div class="container">
 <div class="row">
-<div id="four" class="col-4 col-md-4 col-lg-4 box grey"> 4 </div>
-<div id="five" class="col-4 col-md-4 col-lg-4 box grey"> 5 </div>
-<div id="six" class="col-4 col-md-4 col-lg-4 box grey"> 6 </div>
+<div id="four" class="col-4 col-md-4 col-lg-4 box teal"></div>
+<div id="five" class="col-4 col-md-4 col-lg-4 box teal"></div>
+<div id="six" class="col-4 col-md-4 col-lg-4 box teal"></div>
 </div>
 </div>
 
 <div class="container">
 <div class="row">
-<div id="seven" class="col-4 col-md-4 col-lg-4 box grey"> 7 </div>
-<div id="eight" class="col-4 col-md-4 col-lg-4 box grey"> 8 </div>
-<div id="nine" class="col-4 col-md-4 col-lg-4 box grey"> 9 </div>
+<div id="seven" class="col-4 col-md-4 col-lg-4 box teal"></div>
+<div id="eight" class="col-4 col-md-4 col-lg-4 box teal"></div>
+<div id="nine" class="col-4 col-md-4 col-lg-4 box teal"></div>
 </div>
 </div>
 </div>
+
+<div id="games-played"></div>
 
     </body>
 </html>
