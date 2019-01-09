@@ -13,6 +13,7 @@ const onGetGamesFailure = (response) => {
 
 const onCreateGameSuccess = (response) => {
   store.game = response.game
+  store.turn = 0
   // console.log(store.game)
 
   $('.game-board').show()
@@ -28,8 +29,8 @@ const onCreateGameFailure = (response) => {
 }
 
 const onUpdateGameSuccess = (response) => {
-  // console.log(response)
-  // console.log(response.game)
+  store.game.cells = response.game.cells
+  console.log(store.game.cells)
 }
 
 const onUpdateGameFailure = (response) => {
