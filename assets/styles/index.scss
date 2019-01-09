@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Cabin+Sketch');
+
 $background-color: #919ade;
 $font-color: #dfdfdf;
 $white: #fff;
@@ -10,6 +11,21 @@ $black: #000;
 .hide {
   visibility: hidden;
 }
+@media screen and (max-width: 600px) {
+    nav {
+    position: relative;
+    top: 0;
+    height: 50px;
+    width: 100%;
+  }
+    .btn {
+       background-color: rgba(0, 0, 0, 0.5);
+       display: block;
+       width: 100%;
+       margin-top: 5px;
+    }
+}
+
 
 .game-board {
   margin: 20vw, 0;
@@ -20,6 +36,8 @@ body {
 }
 
 h1 {
+  padding-top: 50px;
+  margin-top: 70px;
   font-family: 'Cabin Sketch';
   color: $white;
   text-align: center;
