@@ -5,10 +5,11 @@ const store = require('./../store')
 
 let cells = ['', '', '', '', '', '', '', '', '']
 
-let turn = 0
+store.turn = 0
+
 const turnCount = function () {
-  turn += 1
-  if (turn >= 5) {
+  store.turn += 1
+  if (store.turn >= 5) {
     checkForWin()
   }
 }
@@ -18,7 +19,7 @@ const endGame = function () {
   store.game.over = true
   $('#user-message').text('')
   // console.log(store.game.over)
-  turn = 0
+  store.turn = 0
   cells = ['', '', '', '', '', '', '', '', '']
 }
 // Game logic
@@ -68,14 +69,14 @@ const onClick = function (id, cellNum) {
   if ($(id).is(":contains('X')") || $(id).is(":contains('O')")) {
     return $('#user-message').text('Please choose an empty cell!')
     // turns alternate player
-  } else if (turn % 2 === 0) {
+  } else if (store.turn % 2 === 0) {
     $(id).append('<p class="xo">X</p>')
     $('#user-message').text('Player 2\'s turn')
     apiEvents.onUpdateGame(cellNum, 'X')
     // Add player indentifier to correct cell space
     cells.splice(cellNum, 1, 'X')
     turnCount()
-  } else if (turn % 2 === 1) {
+  } else if (store.turn % 2 === 1) {
     $(id).append('<p class="xo">O</p>')
     $('#user-message').text('Player 1\'s turn')
     apiEvents.onUpdateGame(cellNum, 'O')

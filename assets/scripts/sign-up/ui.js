@@ -14,6 +14,7 @@ const onSignInSuccess = (response) => {
   $('#user-message').text('Successfully signed in.  Click \'Start Game\' to play!')
   store.user = response.user
   // console.log(store.user)
+  store.turn = 0
 
   $('.start-text').hide()
   $('#get-games').show()
@@ -41,7 +42,7 @@ const onSignOutSuccess = () => {
   $('#games-played').text('')
   $('#win-message').text('')
   store.user = null
-
+  store.turn = 0
   $('.game-board').hide()
   $('#reset-board').hide()
   $('#sign-up-button').show()
