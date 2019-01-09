@@ -11,7 +11,7 @@ const onSignUpFailure = () => {
 }
 
 const onSignInSuccess = (response) => {
-  $('#user-message').text('Successfully signed in.  Click \'Create New Game\' to play!')
+  $('#user-message').text('Successfully signed in.  Click \'Start Game\' to play!')
   store.user = response.user
   // console.log(store.user)
 
@@ -37,7 +37,7 @@ const onChangeFailure = () => {
 }
 
 const onSignOutSuccess = () => {
-  $('#user-message').text('Signed out. Sign back in to play again!')
+  $('#user-message').text('Signed out. Sign back in to play again!').css('color', 'red')
   $('#games-played').text('')
   $('#win-message').text('')
   store.user = null

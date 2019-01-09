@@ -62,7 +62,7 @@ const checkForWin = function () {
 const onClick = function (id, cellNum) {
   // prevent gameplay after game has ended
   if (store.game.over === true) {
-    return $('#win-message').text('Want to play again? Click Create New Game!')
+    return $('#win-message').text('Want to play again? Click on Start Game!')
   } else
   // prevent occupied cell from being changed
   if ($(id).is(":contains('X')") || $(id).is(":contains('O')")) {
