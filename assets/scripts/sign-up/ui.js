@@ -3,7 +3,7 @@
 const store = require('../store')
 
 const onSignUpSuccess = () => {
-  $('#user-message').text('Successfully signed up!')
+  $('#user-message').text('Successfully signed up!').css('color', 'white')
 }
 
 const onSignUpFailure = () => {
@@ -11,7 +11,7 @@ const onSignUpFailure = () => {
 }
 
 const onSignInSuccess = (response) => {
-  $('#user-message').text('Successfully signed in.  Click \'Start Game\' to play!')
+  $('#user-message').text('Successfully signed in.  Click \'Start Game\' to play!').css('color', 'white')
   store.user = response.user
   // console.log(store.user)
   store.turn = 0
@@ -30,7 +30,7 @@ const onSignInFailure = (response) => {
 }
 
 const onChangeSuccess = () => {
-  $('#user-message').text('Password successfully changed!')
+  $('#user-message').text('Password successfully changed!').css('color', 'white')
 }
 
 const onChangeFailure = () => {

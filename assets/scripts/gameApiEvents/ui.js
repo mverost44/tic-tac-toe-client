@@ -1,6 +1,5 @@
 'use strict'
 
-// const gameEvents = require('../game-logic/events.js')
 const store = require('../store')
 
 const onGetGamesSuccess = (response) => {
@@ -8,16 +7,15 @@ const onGetGamesSuccess = (response) => {
 }
 
 const onGetGamesFailure = (response) => {
-  // console.log(response)
+  $('#games-played').text('Failed to get your games :{')
 }
 
 const onCreateGameSuccess = (response) => {
   store.game = response.game
   store.turn = 0
-  // console.log(store.game)
 
   $('.game-board').show()
-  $('#user-message').text('')
+  $('#user-message').text('Click a space to begin... Player 1 goes first!').css('color', 'white')
   $(' ').replaceAll('p')
 
   $('#games-played').text('')
@@ -30,11 +28,10 @@ const onCreateGameFailure = (response) => {
 
 const onUpdateGameSuccess = (response) => {
   store.game.cells = response.game.cells
-  console.log(store.game.cells)
 }
 
 const onUpdateGameFailure = (response) => {
-  // console.log(response)
+  $('#user-message').text('Failed to update game.  Please check your network connection.')
 }
 
 module.exports = {
