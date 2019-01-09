@@ -13,6 +13,7 @@ const onSignUp = (event) => {
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
 
+  $('#user-sign-up').trigger('reset')
   $('#signUpModal').modal('hide')
 }
 
@@ -24,6 +25,7 @@ const onSignIn = event => {
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
 
+  $('#user-sign-in').trigger('reset')
   $('#signInModal').modal('hide')
 }
 
@@ -35,7 +37,7 @@ const onChangePassword = event => {
     .then(ui.onChangeSuccess)
     .catch(ui.onChangeFailure)
 
-  $('form').trigger('reset')
+  $('#user-change-password').trigger('reset')
   $('#changePasswordModal').modal('hide')
 }
 
