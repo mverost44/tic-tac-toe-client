@@ -1,5 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
-
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch');
 $background-color: #919ade;
 $font-color: #dfdfdf;
 $white: #fff;
@@ -13,60 +13,80 @@ $black: #000;
 
 .game-board {
   margin: 20vw, 0;
- }
+}
 
 body {
-  background-color: $background-color;
- }
+  background-image: url("https://i.imgur.com/ehkUsTB.jpg");
+}
 
 h1 {
+  font-family: 'Cabin Sketch';
+  color: $white;
   text-align: center;
- }
+}
 
- #win-message {
-  color: green;
+.start-text {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 25px;
+  color: $white;
+  font-size: 17px;
+  margin-top: 70px;
+  text-align: center;
+}
+
+#win-message {
+  color: $white;
   font-weight: 600;
   text-align: center;
- }
+}
 
- .box {
+#games-played,
+#user-message {
+  color: $white;
+  text-align: center;
+  font-size: 18px;
+}
+
+.xo {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 100pt;
+}
+
+.box {
   align-items: center;
-  border: 1px solid $white;
   color: $font-color;
   display: flex;
   height: 25.3vh;
   justify-content: center;
   width: 70%;
- }
-
- .grey {
-   background-color: $grey;
- }
-
- .teal {
-   background-color: $teal;
- }
-
- .row {
-   align-items: center;
-   margin: auto;
- }
+}
 
 .box:hover {
   background-color: $grey;
- }
+  opacity: 0.2;
+}
 
- #user-message,
- #games-played {
-   text-align: center;
- }
+.grey {
+  background-color: $grey;
+}
 
-// .border {
-//   border-top: 1px solid $white;
-//   border-bottom: 1px solid $white;
-//  }
-//
-// .border1 {
-//   border-left: 1px solid $white;
-//   border-right: 1px solid $white;
-// }
+.teal {
+  background-color: $teal;
+}
+
+.row {
+  align-items: center;
+  margin: auto;
+}
+
+.vertical {
+  border-left: 1px solid $white;
+  border-right: 1px solid $white;
+}
+
+.horizontal {
+  border-bottom: 1px solid $white;
+  border-top: 1px solid $white;
+}

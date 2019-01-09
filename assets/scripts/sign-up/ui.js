@@ -3,7 +3,7 @@
 const store = require('../store')
 
 const onSignUpSuccess = () => {
-  $('#user-message').text('Successfully signed up!').css('color', 'green')
+  $('#user-message').text('Successfully signed up!')
 }
 
 const onSignUpFailure = () => {
@@ -11,10 +11,11 @@ const onSignUpFailure = () => {
 }
 
 const onSignInSuccess = (response) => {
-  $('#user-message').text('Signed In!').css('color', 'green')
+  $('#user-message').text('Successfully signed in.  Click \'Create New Game\' to play!')
   store.user = response.user
   // console.log(store.user)
 
+  $('.start-text').hide()
   $('#get-games').show()
   $('#create-game').show()
   $('#sign-up-button').hide()
@@ -28,7 +29,7 @@ const onSignInFailure = (response) => {
 }
 
 const onChangeSuccess = () => {
-  $('#user-message').text('Password successfully changed!').css('color', 'green')
+  $('#user-message').text('Password successfully changed!')
 }
 
 const onChangeFailure = () => {
@@ -36,7 +37,7 @@ const onChangeFailure = () => {
 }
 
 const onSignOutSuccess = () => {
-  $('#user-message').text('Signed out. Sign back in to play again!').css('color', 'green')
+  $('#user-message').text('Signed out. Sign back in to play again!')
   $('#games-played').text('')
   $('#win-message').text('')
   store.user = null
@@ -49,6 +50,7 @@ const onSignOutSuccess = () => {
   $('#sign-out').hide()
   $('#get-games').hide()
   $('#create-game').hide()
+  $('.start-text').show()
 }
 
 module.exports = {

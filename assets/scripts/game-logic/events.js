@@ -69,14 +69,14 @@ const onClick = function (id, cellNum) {
     return $('#user-message').text('Please choose an empty cell!')
     // turns alternate player
   } else if (turn % 2 === 0) {
-    $(id).append('<p>X</p>')
+    $(id).append('<p class="xo">X</p>')
     $('#user-message').text('Player 2\'s turn')
     apiEvents.onUpdateGame(cellNum, 'X')
     // Add player indentifier to correct cell space
     cells.splice(cellNum, 1, 'X')
     turnCount()
   } else if (turn % 2 === 1) {
-    $(id).append('<p>O</p>')
+    $(id).append('<p class="xo">O</p>')
     $('#user-message').text('Player 1\'s turn')
     apiEvents.onUpdateGame(cellNum, 'O')
     cells.splice(cellNum, 1, 'O')
