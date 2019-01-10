@@ -17,6 +17,7 @@ const onSignInSuccess = (response) => {
   store.turn = 0
 
   $('.start-text').hide()
+  $('#create-game').show()
   $('#get-games').show()
   $('#create-game').show()
   $('#sign-up-button').hide()
@@ -52,6 +53,7 @@ const onSignOutSuccess = () => {
   $('#get-games').hide()
   $('#create-game').hide()
   $('.start-text').show()
+  $('#reset-button').hide()
 }
 
 module.exports = {

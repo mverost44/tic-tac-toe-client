@@ -16,6 +16,8 @@ const onCreateGameSuccess = (response) => {
   store.game.cells = ['', '', '', '', '', '', '', '', '']
 
   $('.game-board').show()
+  $('#reset-button').show()
+  $('#create-game').hide()
   $('#user-message').text('Click a space to begin... Player 1 goes first!').css('color', 'white')
   $(' ').replaceAll('p')
 

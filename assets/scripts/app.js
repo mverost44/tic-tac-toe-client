@@ -13,6 +13,7 @@ $(() => {
   // Hide board on page load
   $('.game-board').hide()
   // hide buttons on page load
+  $('#reset-button').hide()
   $('#get-games').hide()
   $('#create-game').hide()
   $('#change-pw-button').hide()
@@ -35,4 +36,5 @@ $(() => {
   // Game Api request
   $('#get-games').on('click', gameApiEvents.onGetGames)
   $('#create-game').on('click', gameApiEvents.onCreateGame)
+  $('#reset-button').on('click', gameApiEvents.onCreateGame)
 })
