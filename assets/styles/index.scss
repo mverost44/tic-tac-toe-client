@@ -11,12 +11,19 @@ $teal: rgb(0, 156, 161);
 $black: #000;
 
 @media screen and (max-width: 600px) {
+  nav {
+    margin-bottom: 15px;
+  }
   .btn {
     background-color: rgba(0, 0, 0, .5);
     display: block;
     margin-top: 5px;
     width: 100%;
     }
+  #reset-button {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 h1 {
@@ -35,11 +42,11 @@ body {
   align-content: center;
   background-color: rgba(0, 0, 0, .5);
   display: flex;
-  height: 10vh;
+  height: 7vh;
   justify-content: center;
   margin: auto;
   font-size: 15px;
-  width: 20vw;
+  width: 25vw;
 }
 
 #reset-button {
