@@ -3,8 +3,6 @@
 const apiEvents = require('./../gameApiEvents/events.js')
 const store = require('./../store')
 
-let cells = ['', '', '', '', '', '', '', '', '']
-
 store.turn = 0
 
 const turnCount = function () {
@@ -20,7 +18,7 @@ const endGame = function () {
   $('#user-message').text('')
   // console.log(store.game.over)
   store.turn = 0
-  cells = ['', '', '', '', '', '', '', '', '']
+  store.game.cells = ['', '', '', '', '', '', '', '', '']
 }
 // Game logic
 const checkPlayer = function (winner) {
@@ -36,23 +34,23 @@ const checkPlayer = function (winner) {
 }
 
 const checkForWin = function () {
-  if (cells[0] === cells[1] && cells[1] === cells[2] && cells[0] !== '') {
-    checkPlayer(cells[0])
-  } else if (cells[3] === cells[4] && cells[4] === cells[5] && cells[3] !== '') {
-    checkPlayer(cells[3])
-  } else if (cells[6] === cells[7] && cells[7] === cells[8] && cells[6] !== '') {
-    checkPlayer(cells[6])
-  } else if (cells[0] === cells[3] && cells[3] === cells[6] && cells[0] !== '') {
-    checkPlayer(cells[0])
-  } else if (cells[1] === cells[4] && cells[4] === cells[7] && cells[1] !== '') {
-    checkPlayer(cells[1])
-  } else if (cells[2] === cells[5] && cells[5] === cells[8] && cells[2] !== '') {
-    checkPlayer(cells[2])
-  } else if (cells[0] === cells[4] && cells[4] === cells[8] && cells[0] !== '') {
-    checkPlayer(cells[0])
-  } else if (cells[2] === cells[4] && cells[4] === cells[6] && cells[2] !== '') {
-    checkPlayer(cells[2])
-  } else if (cells.every(function (e) { return e !== '' })) {
+  if (store.game.cells[0] === store.game.cells[1] && store.game.cells[1] === store.game.cells[2] && store.game.cells[0] !== '') {
+    checkPlayer(store.game.cells[0])
+  } else if (store.game.cells[3] === store.game.cells[4] && store.game.cells[4] === store.game.cells[5] && store.game.cells[3] !== '') {
+    checkPlayer(store.game.cells[3])
+  } else if (store.game.cells[6] === store.game.cells[7] && store.game.cells[7] === store.game.cells[8] && store.game.cells[6] !== '') {
+    checkPlayer(store.game.cells[6])
+  } else if (store.game.cells[0] === store.game.cells[3] && store.game.cells[3] === store.game.cells[6] && store.game.cells[0] !== '') {
+    checkPlayer(store.game.cells[0])
+  } else if (store.game.cells[1] === store.game.cells[4] && store.game.cells[4] === store.game.cells[7] && store.game.cells[1] !== '') {
+    checkPlayer(store.game.cells[1])
+  } else if (store.game.cells[2] === store.game.cells[5] && store.game.cells[5] === store.game.cells[8] && store.game.cells[2] !== '') {
+    checkPlayer(store.game.cells[2])
+  } else if (store.game.cells[0] === store.game.cells[4] && store.game.cells[4] === store.game.cells[8] && store.game.cells[0] !== '') {
+    checkPlayer(store.game.cells[0])
+  } else if (store.game.cells[2] === store.game.cells[4] && store.game.cells[4] === store.game.cells[6] && store.game.cells[2] !== '') {
+    checkPlayer(store.game.cells[2])
+  } else if (store.game.cells.every(function (e) { return e !== '' })) {
     $('#win-message').text('Game is a Draw')
     endGame()
   } else {
@@ -74,14 +72,14 @@ const onClick = function (id, cellNum) {
     $('#user-message').text('Player 2\'s turn')
     apiEvents.onUpdateGame(cellNum, 'X')
     // Add player indentifier to correct cell space
-    cells.splice(cellNum, 1, 'X')
+    store.game.cells.splice(cellNum, 1, 'X')
     turnCount()
   } else if (store.turn % 2 === 1) {
     $(id).append('<p class="xo">O</p>')
     $('#user-message').text('Player 1\'s turn')
     apiEvents.onUpdateGame(cellNum, 'O')
-    cells.splice(cellNum, 1, 'O')
-    // console.log(cells)
+    store.game.cells.splice(cellNum, 1, 'O')
+    // console.log(store.game.cells)
     turnCount()
   }
 }

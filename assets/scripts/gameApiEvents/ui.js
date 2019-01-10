@@ -13,6 +13,7 @@ const onGetGamesFailure = (response) => {
 const onCreateGameSuccess = (response) => {
   store.game = response.game
   store.turn = 0
+  store.game.cells = ['', '', '', '', '', '', '', '', '']
 
   $('.game-board').show()
   $('#user-message').text('Click a space to begin... Player 1 goes first!').css('color', 'white')
