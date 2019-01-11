@@ -9,13 +9,14 @@ $white: #fff;
 $grey: rgb(128, 128, 128);
 $teal: rgb(0, 156, 161);
 $black: #000;
+$gradient: rgba(0, 0, 0, .5);
 
 @media screen and (max-width: 600px) {
   nav {
     margin-bottom: 15px;
   }
   .btn {
-    background-color: rgba(0, 0, 0, .5);
+    background-color: $gradient;
     display: block;
     margin-top: 5px;
     width: 100%;
@@ -38,9 +39,10 @@ body {
   background-image: url("https://i.imgur.com/ehkUsTB.jpg");
 }
 
+#ai,
 #create-game {
   align-content: center;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: $gradient;
   display: flex;
   height: 7vh;
   justify-content: center;
@@ -50,20 +52,20 @@ body {
 }
 
 #reset-button {
-  background-color: rgba(0, 0, 0, .5);
+  background-color: $gradient;
   float: right;
   margin-right: 5px;
   margin-top: 5px;
 }
 
 .start-text {
-  display: flex;
-  justify-content: center;
   align-content: center;
-  padding: 25px;
   color: $white;
+  display: flex;
   font-size: 17px;
+  justify-content: center;
   margin-top: 70px;
+  padding: 25px;
   text-align: center;
 }
 
@@ -81,8 +83,8 @@ body {
 #games-played,
 #user-message {
   color: $white;
-  text-align: center;
   font-size: 18px;
+  text-align: center;
 }
 
 .xo {

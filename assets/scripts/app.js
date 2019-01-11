@@ -13,6 +13,7 @@ $(() => {
   // Hide board on page load
   $('.game-board').hide()
   // hide buttons on page load
+  $('#ai').hide()
   $('#reset-button').hide()
   $('#get-games').hide()
   $('#create-game').hide()
@@ -24,17 +25,19 @@ $(() => {
   $('#user-change-password').on('submit', events.onChangePassword)
   $('#sign-out').on('click', events.onSignOut)
   // game-board functionality
-  $('#one').on('click', function () { gameEvents.onClick('#one', 0) })
-  $('#two').on('click', function () { gameEvents.onClick('#two', 1) })
-  $('#three').on('click', function () { gameEvents.onClick('#three', 2) })
-  $('#four').on('click', function () { gameEvents.onClick('#four', 3) })
-  $('#five').on('click', function () { gameEvents.onClick('#five', 4) })
-  $('#six').on('click', function () { gameEvents.onClick('#six', 5) })
-  $('#seven').on('click', function () { gameEvents.onClick('#seven', 6) })
-  $('#eight').on('click', function () { gameEvents.onClick('#eight', 7) })
-  $('#nine').on('click', function () { gameEvents.onClick('#nine', 8) })
+  $('#1').on('click', function () { gameEvents.onClick('#1', 0) })
+  $('#2').on('click', function () { gameEvents.onClick('#2', 1) })
+  $('#3').on('click', function () { gameEvents.onClick('#3', 2) })
+  $('#4').on('click', function () { gameEvents.onClick('#4', 3) })
+  $('#5').on('click', function () { gameEvents.onClick('#5', 4) })
+  $('#6').on('click', function () { gameEvents.onClick('#6', 5) })
+  $('#7').on('click', function () { gameEvents.onClick('#7', 6) })
+  $('#8').on('click', function () { gameEvents.onClick('#8', 7) })
+  $('#9').on('click', function () { gameEvents.onClick('#9', 8) })
   // Game Api request
   $('#get-games').on('click', gameApiEvents.onGetGames)
   $('#create-game').on('click', gameApiEvents.onCreateGame)
   $('#reset-button').on('click', gameApiEvents.onCreateGame)
+  // Ai game
+  $('#ai').on('click', gameEvents.onAi)
 })

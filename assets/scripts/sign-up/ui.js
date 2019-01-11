@@ -16,6 +16,7 @@ const onSignInSuccess = (response) => {
   // console.log(store.user)
   store.turn = 0
 
+  $('#ai').show()
   $('.start-text').hide()
   $('#create-game').show()
   $('#get-games').show()
@@ -46,6 +47,7 @@ const onSignOutSuccess = () => {
   store.turn = 0
   $('.game-board').hide()
   $('#reset-board').hide()
+  $('#ai').hide()
   $('#sign-up-button').show()
   $('#sign-in-button').show()
   $('#change-pw-button').hide()

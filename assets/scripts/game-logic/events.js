@@ -7,6 +7,8 @@ store.turn = 0
 
 const turnCount = function () {
   store.turn += 1
+  console.log(store.turn)
+  console.log(store.game.cells)
   if (store.turn >= 5) {
     checkForWin()
   }
@@ -58,6 +60,27 @@ const checkForWin = function () {
   }
 }
 
+const aiTurn = function () {
+  const aiCell = Math.floor(Math.random() * (9 - 0) + 0)
+  if ($(`#${aiCell}`).is(":contains('X')") || $(`#${aiCell}`).is(":contains('O')")) {
+    return aiTurn()
+  } else {
+    $(`#${aiCell}`).append('<p class="xo">O</p>')
+    $('#user-message').text('Player 1\'s turn')
+    apiEvents.onUpdateGame(aiCell - 1, 'O')
+    store.game.cells.splice(aiCell - 1, 1, 'O')
+    turnCount()
+  }
+}
+
+const ifAi = function () {
+  if (store.ai === true) {
+    aiTurn()
+  } else {
+    return false
+  }
+}
+
 const onClick = function (id, cellNum) {
   // prevent gameplay after game has ended
   if (store.game.over === true) {
@@ -69,11 +92,12 @@ const onClick = function (id, cellNum) {
     // turns alternate player
   } else if (store.turn % 2 === 0) {
     $(id).append('<p class="xo">X</p>')
-    $('#user-message').text('Player 2\'s turn')
     apiEvents.onUpdateGame(cellNum, 'X')
     // Add player indentifier to correct cell space
     store.game.cells.splice(cellNum, 1, 'X')
+    $('#user-message').text('Player 2\'s turn')
     turnCount()
+    ifAi()
   } else if (store.turn % 2 === 1) {
     $(id).append('<p class="xo">O</p>')
     $('#user-message').text('Player 1\'s turn')
@@ -84,7 +108,13 @@ const onClick = function (id, cellNum) {
   }
 }
 
+const onAi = function () {
+  store.ai = true
+  apiEvents.onCreateGame(event)
+}
+
 module.exports = {
   onClick,
-  checkForWin
+  checkForWin,
+  onAi
 }
